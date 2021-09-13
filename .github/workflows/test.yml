@@ -14,7 +14,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ../../
+      working-directory: "/home/runner/work/itempTasks"
       
     strategy:
       matrix:
@@ -36,9 +36,8 @@ jobs:
   # uses: andstor/file-existence-action@87d74d4732ddb824259d80c8a508c0124bf1c673
       uses: andstor/file-existence-action@v1.0.1
       with:
-        env: ../../itempTasks/
     # Comma separated string with paths to files and directories to check for existence.
-        files: "package.json"
+        files: "itempTasks, package.json"
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.0
       with:
