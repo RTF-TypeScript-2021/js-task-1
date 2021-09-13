@@ -30,8 +30,3 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - name: Auto Assign Action
-      uses: kentaro-m/auto-assign-action@v1.2.0
-      with:
-        repo-token: ${{ secrets.REPOKEY }}
-        configuration-path: .github/auto_assign.yml
