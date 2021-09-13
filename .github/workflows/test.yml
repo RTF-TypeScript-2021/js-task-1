@@ -22,13 +22,13 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: File or Directory Exists
+    - name: File Existence
   # You may pin to the exact commit or the version.
-  # uses: dothq/file-or-directory-exists@394c4e36ce4a46a7975bad3d6a5a497020c6a4f1
-      uses: dothq/file-or-directory-exists@1.0.2
+  # uses: andstor/file-existence-action@87d74d4732ddb824259d80c8a508c0124bf1c673
+      uses: andstor/file-existence-action@v1.0.1
       with:
-    # List of files or directories to check
-        input: ./package.json
+    # Comma separated string with paths to files and directories to check for existence.
+        files: "package.json"
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.0
       with:
