@@ -13,7 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      working-directory: ../itempTasks
+      
     strategy:
       matrix:
         node-version: [16.x]
