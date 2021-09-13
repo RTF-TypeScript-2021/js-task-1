@@ -13,8 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      working-directory: "/home/runner/work/itempTasks"
+    
       
     strategy:
       matrix:
@@ -22,22 +21,14 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name : machine ls $GITHUB_WORKSPACE
-      run : "ls -la $GITHUB_WORKSPACE"
-    - name : machine ls $HOME
-      working-directory : "."
-      run : "ls -la $HOME"
-    - name : machine echo $GITHUB_WORKSPACE
-      run : "echo $GITHUB_WORKSPACE"
-    - name : machine echo $HOME
-      run : "echo $HOME"
+    
     - name: File Existence
   # You may pin to the exact commit or the version.
   # uses: andstor/file-existence-action@87d74d4732ddb824259d80c8a508c0124bf1c673
       uses: andstor/file-existence-action@v1.0.1
       with:
     # Comma separated string with paths to files and directories to check for existence.
-        files: "itempTasks, package.json"
+        files: "package.json"
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.0
       with:
