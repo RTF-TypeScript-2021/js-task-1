@@ -4,9 +4,9 @@
 
 [Лекции](https://www.youtube.com/channel/UCfoHH5J1ui5owLi0h7k__MQ/playlists) выложены на YouTube и разделены по плейлистам
 
-1. JavaScript
-2. TypeScript
-3. Передача данных
+1. JavaScript 7
+2. TypeScript 7
+3. Передача данных 7
 
 ### Практики
 
