@@ -2,12 +2,11 @@
 
 ### Лекции
 
-Лекции выложены на YouTube и разделены по плейлистам
+[Лекции](https://www.youtube.com/channel/UCfoHH5J1ui5owLi0h7k__MQ/playlists) выложены на YouTube и разделены по плейлистам
 
-1. [JavaScript](https://www.youtube.com/channel/UCfoHH5J1ui5owLi0h7k__MQ/playlists)
+1. JavaScript
 2. TypeScript
-3. Angular
-4. HTML & CSS
+3. Передача данных
 
 ### Практики
 
