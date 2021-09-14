@@ -16,7 +16,7 @@
          return [];
      let resultArray=[array.length];
      let j = 0;
-     for(let i = 0; array[i] != 0; i++){
+     for(let i = 0; i < array.length/2; i++){
         resultArray[j] = array[i];
         resultArray[j+1] = array[i]
         j +=2;

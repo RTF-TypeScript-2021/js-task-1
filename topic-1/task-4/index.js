@@ -9,7 +9,7 @@
 function countUniqueName(nameArray) {
     for(let word in nameArray)
     {
-        word.replace(/[^ -~]+/, '')
+        word.replace(/[^ -~]+/, '').toLowerCase()
     }
     return new Set(nameArray).size;
 }
