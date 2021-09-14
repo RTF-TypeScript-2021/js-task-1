@@ -12,6 +12,8 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
+     if(array[0] = 0)
+         return [];
      let resultArray=[array.length];
      let j = 0;
      for(let i = 0; array[i] != 0; i++){

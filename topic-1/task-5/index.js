@@ -5,6 +5,7 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
+
 }
 
 module.exports.kaprekarConstant = kaprekarConstant;
