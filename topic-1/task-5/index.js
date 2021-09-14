@@ -12,7 +12,7 @@ function kaprekarConstant(number) {
     const sorted = number.toString().split("").sort();
     const ascending = sorted.join("");
     const descending = sorted.reverse().join("");
-    number = Math.abs(parseInt(descending) - parseInt(ascending));
+    number = parseInt(descending) - parseInt(ascending);
   }
   return number;
 }

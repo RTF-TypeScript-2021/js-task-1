@@ -14,7 +14,7 @@
 function calculateDoubleArray(array) {
   const res = [];
   array.forEach((value, index) => {
-    if (value === 0) {
+    if (!value) {
       return;
     }
     if (array[array.length - (index + 1)] === 0) {

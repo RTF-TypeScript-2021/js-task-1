@@ -10,7 +10,7 @@ const countUniqueName = (nameArray) =>
   [
     ...new Set(
       nameArray.filter(
-        (value) => /^[а-яА-Яa-zA-Z;.]*$/.test(value) && value !== ""
+        (value) => /^[а-яА-Яa-zA-Z;.]*$/.test(value) && value
       )
     ),
   ].length;
