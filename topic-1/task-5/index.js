@@ -7,7 +7,7 @@
 function kaprekarConstant(number){
     while(number != 6174){
         number = number.toString().split("").sort().reverse().join('') - number.toString().split("").sort().join('');
-        if (number == 0||number<1000||number>10000)
+        if (number == 0||number<1000||number>9998)
             throw new Error('Условия функции не соблюдены');
     }
     return number;

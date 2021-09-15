@@ -11,7 +11,7 @@
 
 function factorial(n) {
     if (n < 0)
-        throw new Error();
+        throw new Error('n < 0');
     if(n === 0 || n === 1)
         return 1;
     else{
