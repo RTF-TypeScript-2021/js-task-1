@@ -7,7 +7,7 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
-    return new Set(nameArray.filter(x => /[^ -~]+/.test(x) && (x))).size;
+    return new Set(nameArray.filter(x => !/[^ -~]+/.test(x) && (x))).size;
 }
 
 module.exports.countUniqueName = countUniqueName;
