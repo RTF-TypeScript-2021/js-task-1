@@ -12,10 +12,11 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
- let resArray = [];
+ const resArray = [];
  for(let i = 0; i < array.length; i++){
-  if (array[i] === 0)
+  if (array[i] === 0) {
    break;
+  }
   resArray.push(array[i]);
   resArray.push(array[i]);
  }

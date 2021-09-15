@@ -10,14 +10,19 @@
 */
 
 function factorial(n) {
+    let result =1;
     if (n < 0)
         throw new Error('n < 0');
     if(n === 0 || n === 1)
         return 1;
     else{
-        n *= factorial(n-1)
+        while (n>1){
+            result *=n;
+            n--;
+        }
     }
-    return n;
+
+    return result;
 }
 
 module.exports.factorial = factorial;
