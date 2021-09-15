@@ -7,7 +7,6 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
-
     return new Set(nameArray.filter(x => x && /^[А-Яа-я;.]*$/.test(x))).size;
 }
 
