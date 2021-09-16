@@ -10,10 +10,11 @@ function countUniqueName(nameArray) {
     let set = new Set();
 
     nameArray
-        .map(x => x.toLowerCase())
         .forEach(x => {
-            if (!set.has(x))
-                set.add(x)
+            let e = x.toLowerCase();
+            if (!set.has(e)) {
+                set.add(e)
+            }
         });
 
     return set.size;

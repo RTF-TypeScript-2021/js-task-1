@@ -15,10 +15,10 @@ function calculateDoubleArray(array) {
  let res = [];
 
  array.forEach(x => {
-  if (x !== 0) {
-   res.push(x);
-   res.push(x);
+  if (x === 0) {
+   return res;
   }
+  res.push(x, x);
  });
 
  return res;
