@@ -11,5 +11,7 @@ test('On edge-data throws error', () => {
     expect(() => {kaprekarConstant(6666)}).toThrow();
     expect(() => {kaprekarConstant(12)}).toThrow();
     expect(() => {kaprekarConstant(999999)}).toThrow();
+    expect(() => {kaprekarConstant(989222)}).toThrow();
+    expect(() => {kaprekarConstant(999)}).toThrow();
 })
 
