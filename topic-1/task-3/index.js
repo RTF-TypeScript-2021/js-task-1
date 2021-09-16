@@ -10,7 +10,7 @@
 */
 
 function factorial(n) {
-    if (n < 0 || !Number.isInteger(n))
+    if (!Number.isInteger(n) || n < 0 )
         throw new Error("Argument error. n must be a positive number.");
 
     let factorial = 1;
