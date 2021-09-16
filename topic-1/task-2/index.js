@@ -11,6 +11,7 @@
  * @param {*} array массив
  * @returns удвоенный массив
  */
+
  function calculateDoubleArray(array) {
      if (array[0] == 0)
          return [];
