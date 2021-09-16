@@ -12,6 +12,12 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
+  if (array.every(x => x === 0))
+   return [];
+
+  let result = [];
+  array.filter(x => x !== 0).forEach(x => result.push(x, x));
+  return result;
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;

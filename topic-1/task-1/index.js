@@ -11,6 +11,10 @@
  */
 
  function isTriangle(a, b, c) {
+  let sides = [a, b, c];
+  if (sides.some(x => !Number.isInteger(x) || x < 1))
+   return false;
+  return a + b > c && a + c > b && b + c > a;
 }
 
 module.exports.isTriangle = isTriangle;

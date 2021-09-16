@@ -10,6 +10,14 @@
 */
 
 function factorial(n) {
+    if (n < 0 || !Number.isInteger(n))
+        throw new Error("Argument error. n must be a positive number.");
+
+    let factorial = 1;
+    for (let i = 2; i <= n; i++)
+        factorial *= i;
+
+    return factorial;
 }
 
 module.exports.factorial = factorial;
