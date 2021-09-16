@@ -6,12 +6,12 @@
  * */
 function kaprekarConstant(number){
     const toCheck = []
-    number.toString().split().forEach( num => {
+    number.toString().split('').forEach( num => {
         if (!toCheck.includes(num))
             toCheck.push(num);
     });
-    if (Math.floor(number / 10000) !== 0 ||
-        Math.floor(999 / number) !== 0 ||
+    if (number < 1000 ||
+        number > 9999 ||
         toCheck.length === 1) {
         throw new Error();
     }
