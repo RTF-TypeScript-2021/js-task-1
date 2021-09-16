@@ -5,6 +5,10 @@
  * выкидывать исключение.
  * */
 
+function getNumberFromSortedArray(array, sortedFunc) {
+    return parseInt(array.sort(sortedFunc).join(""));
+}
+
 function kaprekarConstant(number) {
     if (number < 1000)
         throw new SyntaxError("число должно быть четерыхзначным");
@@ -17,8 +21,8 @@ function kaprekarConstant(number) {
             number = Math.floor(number / 10);
         }
 
-        let big = parseInt(array.sort((a, b) => b - a).join(""));
-        let small = parseInt(array.sort().join(""));
+        let big = getNumberFromSortedArray(array, ((a, b) => b - a));
+        let small = getNumberFromSortedArray(array)
 
         number = big - small;
 
