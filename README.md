@@ -1,5 +1,5 @@
 ## Курс по программированию на TypeScript на РТФ-2021
-
+Это мой форк и я буду тут работать  
 ### Лекции
 
 [Лекции](https://www.youtube.com/channel/UCfoHH5J1ui5owLi0h7k__MQ/playlists) выложены на YouTube и разделены по плейлистам
