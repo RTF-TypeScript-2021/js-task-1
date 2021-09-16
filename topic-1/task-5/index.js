@@ -10,7 +10,7 @@ function getNumberFromSortedArray(array, sortedFunc) {
 }
 
 function kaprekarConstant(number) {
-    if (number < 1000)
+    if (number < 1000 && number > 9999)
         throw new SyntaxError("число должно быть четерыхзначным");
 
     while (number !== 6174) {
