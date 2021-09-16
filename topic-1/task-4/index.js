@@ -7,6 +7,12 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
+    const res = [];
+    nameArray.forEach( name => {
+        if (!res.includes(name.toLowerCase()) && name !== "–" && name !== "")
+            res.push(name);
+    });
+    return res.length;
 }
 
 module.exports.countUniqueName = countUniqueName;
