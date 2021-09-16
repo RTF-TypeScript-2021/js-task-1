@@ -9,7 +9,7 @@
 function countUniqueName(nameArray) {
     const res = [];
     nameArray.forEach( name => {
-        if (!res.includes(name.toLowerCase()) && name !== "–" && name !== "")
+        if (!res.includes(name.toLowerCase()))
             res.push(name.toLowerCase());
     });
     return res.length;
