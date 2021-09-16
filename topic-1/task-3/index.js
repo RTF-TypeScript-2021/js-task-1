@@ -10,6 +10,14 @@
 */
 
 function factorial(n) {
+    if(n < 0) throw new Error();
+    a = 0;
+    ans = 1;
+    while(a < n) {
+        ans = ans*(a+1);
+        a++;
+    }
+    return ans;
 }
 
 module.exports.factorial = factorial;
