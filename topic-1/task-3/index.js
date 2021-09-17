@@ -10,7 +10,7 @@
  */
 
 function factorial(n) {
-    if (n < 0 && !Number.isInteger(n)) {
+    if (n < 0 || !Number.isInteger(n)) {
         throw new SyntaxError("число должно быть целым и не может быть меньше нуля")
     }
 
