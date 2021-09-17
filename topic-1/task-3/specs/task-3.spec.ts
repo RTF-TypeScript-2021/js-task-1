@@ -8,4 +8,5 @@ test('Method works fine', () => {
     expect(factorial(6)).toEqual(720);
     expect(factorial(12)).toEqual(479001600);
     expect(() => { factorial(-6); }).toThrow(Error)
+    expect(() => { factorial(2.4); }).toThrow(Error)
 });
