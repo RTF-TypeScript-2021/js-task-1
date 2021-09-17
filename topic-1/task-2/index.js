@@ -12,15 +12,36 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
-     if(array[0] == 0) return new Array();
-     let ans = new Array(array.length)
-     for (let i = 0, j = 0; i < array.length; i++) {
-         if(array[i] == 0) break;
-         ans[j] = array[i];         
-         ans[j+1] = array[i];         
-         j+= 2;         
-     }
-     return ans;
+    let freeMembersCounter = 0; 
+    let numberOfMembers = 0;
+    let subArray = new Array();
+    for (let i = 0, counter = 0; i < array.length; i++) {
+        if (!Number.isFinite(array[i]))
+            throw new Error("Массив некорректный");
+        if (array[i] == 0) {
+            counter++;
+            freeMembersCounter++;
+        }
+        else { 
+            subArray.push(array[i]);
+            numberOfMembers++;
+        }
+        if (counter == array.length) return [];
+    }
+    if (freeMembersCounter == 0) 
+        return array;
+    array = new Array();
+    for (let i = 0; i < freeMembersCounter; i++) { 
+        array.push(subArray[i]);    
+        array.push(subArray[i]);
+    }    
+    if (numberOfMembers > freeMembersCounter)
+    {
+        let n = numberOfMembers - freeMembersCounter
+        for (let i = subArray.length - n; i < subArray.length ; i++)
+            array.push(subArray[i]);                 
+    }
+    return array;
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;

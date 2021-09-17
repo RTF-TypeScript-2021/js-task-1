@@ -6,13 +6,14 @@
  * @param {string[]} nameArray - массив имён.
  * @return {number} Количество уникальных имён
  * */
-function countUniqueName(nameArray) {
-    let dic = new Map();
-    nameArray.forEach(element => {
-        if(!dic.has(element.toLowerCase()))
-            dic.set(element.toLowerCase(), 0);
-    });
-    return dic.size;
+function countUniqueName(nameArray) {      
+    for (let i = 0; i < nameArray.length; i++) {
+        if (typeof(nameArray[i]) != "string")
+            throw new Error("Массив некорректный");
+        nameArray[i] = nameArray[i].toLowerCase();
+    }
+    let set = new Set(nameArray);
+    return set.size;
 }
 
 module.exports.countUniqueName = countUniqueName;

@@ -9,8 +9,13 @@
  * @param {*} c третья сторона
  * @returns 
  */
-
  function isTriangle(a, b, c) { 
+    if (typeof(a) != "number" || a <= 0)
+        throw new Error("Сторона 'a' некорректна");
+    if (typeof(b) != "number" || b <= 0)
+        throw new Error("Сторона 'b' некорректна");
+    if (typeof(c) != "number" || c <= 0)
+        throw new Error("Сторона 'c' некорректна");           
     if (a >= (b + c) || b >= (a + c) || c >= (a + b))
         return false;
     return true;

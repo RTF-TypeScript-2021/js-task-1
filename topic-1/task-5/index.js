@@ -5,16 +5,16 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number) {    
-    if(number > 9999 || number < 1000) throw new Error(); 
+    if (number > 9999 || number < 1000) throw new Error("Чмсло не четырёхзначное"); 
     for (let i = 1, b = number.toString(), counter = 0; i < b.length; i++) {
-        if(b[0] == b[i])
+        if (b[0] == b[i])
             counter++;
-        if(counter == 3) throw new Error();
+        if (counter == 3) throw new Error("Все цифры в числе одинаковы");
     } 
     while(true)
     {
         number = calculate(number);             
-        if(number == 6174) return number;
+        if (number == 6174) return number;
     }
 }
 function calculate(number) {
@@ -22,8 +22,7 @@ function calculate(number) {
     let num1 = sub.join('');
     let num2 = sub.reverse().join('');
     num1 = parseInt(num1);
-    num2 = parseInt(num2);
-    number = num1 > num2 ? num1 - num2 : num2 - num1;
-    return number;
+    num2 = parseInt(num2) - num1; 
+    return num2;
 }
 module.exports.kaprekarConstant = kaprekarConstant;

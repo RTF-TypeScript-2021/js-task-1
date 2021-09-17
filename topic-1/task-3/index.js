@@ -8,12 +8,14 @@
  * Если число меньше 0, генерируйте ошибку.
  * @param n число
 */
-
 function factorial(n) {
-    if(n < 0) throw new Error();
+    if (n < 0) 
+        throw new Error("Число 'n' отрицательное");
+    if (!Number.isInteger(n)) 
+        throw new Error("Число 'n' не целое");
     a = 0;
     ans = 1;
-    while(a < n) {
+    while (a < n) {
         ans = ans*(a+1);
         a++;
     }
