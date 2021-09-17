@@ -14,12 +14,11 @@
  function calculateDoubleArray(array) {
      let doubleArray = [];
      for (let i = 0; i < array.Length; i++) {
-         if (array[i] == 0) {
-            continue;
+         if (array[i] != 0) {
+            let current = array[i];
+            doubleArray.push(current);
+            doubleArray.push(current);
          }
-        let current = array[i];
-        doubleArray.push(array[i]);
-        doubleArray.push(array[i]);
      }
      return doubleArray;
 }
