@@ -11,10 +11,14 @@
 
 function factorial(n) {
     if (n < 0)
+    {
         throw new Error('Error')
+    }
     let f = 1;
     for (let i = 2; i<=n; i++)
+    {
         f *=i;
+    }
     return f;
 }
 

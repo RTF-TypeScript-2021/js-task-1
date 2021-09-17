@@ -13,9 +13,11 @@
  */
 
  function calculateDoubleArray(array) {
-     if (array[0] == 0)
+     if (array[0] === 0)
+     {
          return [];
-     var j = new Array(array.length);
+     }
+     var j = new Array();
      for (var i = array.length / 2-1;  i>=0 ; i--)
      {
         j[i*2] = array[i];

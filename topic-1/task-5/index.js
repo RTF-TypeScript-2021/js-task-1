@@ -4,18 +4,22 @@
  * Предусмотреть крайние случаи, для входных данных и при необходимости
  * выкидывать исключение.
  * */
-function subtract(number)
-{
-    return number.toString().split('').sort().reverse().join('') - number.toString().split('').sort().join('');
-}
 
 function kaprekarConstant(number){
     if (number < 1000 || number > 9999)
+    {
         throw new Error('');
+    }
     if (number == 6174)
+    {
         return number;
+    }
     else 
-        return(kaprekarConstant(subtract(number)))
+    {
+        let max = number.toString().split('').sort().reverse().join('');
+        let min = number.toString().split('').sort().join('');
+        return kaprekarConstant(max-min);
+    }
 }
 
 module.exports.kaprekarConstant = kaprekarConstant;

@@ -7,8 +7,8 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
-    let j = nameArray.map(x => x.toLowerCase());
-    return new Set(j).size;
+    const parsedNameArray = nameArray.map(name => name.toLowerCase());
+    return new Set(parsedNameArray).size;
 }
 
 module.exports.countUniqueName = countUniqueName;
