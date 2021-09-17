@@ -10,6 +10,11 @@
 */
 
 function factorial(n) {
+    let factorial = 1;
+    for (n; n > 1; n--) {
+        factorial *= n;
+    }
+    return factorial;
 }
 
 module.exports.factorial = factorial;
