@@ -10,6 +10,18 @@
 */
 
 function factorial(n) {
+    if (n < 0)
+        return error;
+    else if (n == 0 || n == 1)
+        return n = 1;
+    else
+    {
+        let x;
+        for(i = 1; i < n; i++)
+            x = n * i;
+    return x;
+    }
 }
+//npm test
 
 module.exports.factorial = factorial;
