@@ -5,7 +5,7 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number) {    
-    if (number > 9999 || number < 1000) throw new Error("Чмсло не четырёхзначное"); 
+    if (number > 9999 || number < 1000) throw new Error("Число не четырёхзначное"); 
     for (let i = 1, b = number.toString(), counter = 0; i < b.length; i++) {
         if (b[0] == b[i])
             counter++;
