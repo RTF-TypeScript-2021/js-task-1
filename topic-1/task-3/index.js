@@ -10,6 +10,9 @@
 */
 
 function factorial(n) {
+    if (n < 0) {
+        throw new Error('less than 0')
+    }
     let factorial = 1;
     for (n; n > 1; n--) {
         factorial *= n;
