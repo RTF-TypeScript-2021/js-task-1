@@ -1,17 +1,14 @@
-/** Задача 2 - работа с циклом */
-
-// Дан массив [1, 2, 3, 4, 5, 0, 0, 0, 0, 0] такого вида. 
-// Необходимо привести его к виду [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
-// То есть, удвоить количество каждого элемента.
-// Где элемент со значением 0 - свободная ячейка.
-// Для массива, состоящего из нулей(свободных ячеек), верните пустой.
-
+"use strict"
 /**
  * 
- * @param {*} array массив
- * @returns удвоенный массив
- */
- function calculateDoubleArray(array) {
+ * @param {Array<number>} array Массив
+ * @returns {Array<number>} Удвоенный массив
+*/
+
+function calculateDoubleArray(array) {
+    let cleanArray = array.filter(num => num != 0);
+    let zeroCount = array.filter(num => num == 0).length;
+    return cleanArray.flatMap(num => zeroCount-- > 0 ? [num, num] : num);
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
