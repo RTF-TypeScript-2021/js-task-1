@@ -10,6 +10,8 @@
 */
 
 function factorial(n) {
+    if (!Number.isInteger(n))
+        throw new Error('Incorrect value');
     if (n < 0)
         throw new Error('Negative value');
     if (n == 0)

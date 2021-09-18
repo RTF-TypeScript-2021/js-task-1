@@ -7,8 +7,11 @@
 function kaprekarConstant(number){
     if (number > 9999 || number < 1000)
         throw new Error('Number has more or less than 4 digits');
-    if (new Set(String(number).split('')).size < String(number).length)
-        throw new Error('Number has the same digits');
+    let stringNumber = String(number);
+    if (stringNumber[0] === stringNumber[1]
+        && stringNumber[1] === stringNumber[2]
+        && stringNumber[2] == stringNumber[3])
+        throw new Error('All numbers are the same');
     for (let i = 0; i < 7; i++) {
         number = getSortedDigits(number) - getSortedDigits(number, 'descending');
         number = Math.abs(number);

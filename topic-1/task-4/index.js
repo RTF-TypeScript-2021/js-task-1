@@ -7,8 +7,14 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
-    let lowerNames = nameArray.map(x => x.toLowerCase());
-    let uniqueNames = new Set(lowerNames);
+    if (!Array.isArray(nameArray))
+        throw new Error('Incorrect argument');
+    nameArray.forEach(name => {
+        if (Object.prototype.toString.call(name) !== '[object String]')
+            throw new Error('Array has element with incorrect type');
+    });
+    const lowerNames = nameArray.map(x => x.toLowerCase());
+    const uniqueNames = new Set(lowerNames);
     return uniqueNames.size;
 }
 
