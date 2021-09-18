@@ -6,7 +6,7 @@
 */
 
 let factorial = n => n >= 0 
-    ? (n == 0 || n == 1 ? 1 : n + factorial(n - 1))
+    ? (n == 0 ? 1 : n * factorial(n - 1))
     : new Error(`${n} is not possitive or null number`);
 
 module.exports.factorial = factorial;
