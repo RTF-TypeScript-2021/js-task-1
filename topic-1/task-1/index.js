@@ -1,4 +1,5 @@
 "use strict"
+
 /**
  * @param {number} a Первая сторона
  * @param {number} b Вторая сторона

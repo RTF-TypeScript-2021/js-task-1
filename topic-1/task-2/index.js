@@ -1,4 +1,5 @@
 "use strict"
+
 /**
  * 
  * @param {Array<number>} array Массив
