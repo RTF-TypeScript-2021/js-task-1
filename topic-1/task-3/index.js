@@ -5,8 +5,11 @@
  * @returns {Number} Факториал исходного числа
 */
 
-let factorial = n => n >= 0 
-    ? (n == 0 ? 1 : n * factorial(n - 1))
-    : new Error(`${n} is not possitive or null number`);
+function factorial(n){
+    if (n >= 0)
+        return n == 0 ? 1 : n * factorial(n - 1);
+    else
+        throw new Error(`${n} is not possitive or null number`);
+}
 
 module.exports.factorial = factorial;
