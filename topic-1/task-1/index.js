@@ -1,16 +1,12 @@
-/** Задача 1 - базовая работа с переменными */
-
-
 /**
- * Реализуйте метод, который принимает 3 целочисленных значения a, b, c.
- * Метод должен возвращать true, если треугольник можно построить со сторонами заданной длины, и false в любом другом случае.
- * @param {*} a первая сторона
- * @param {*} b вторая сторона
- * @param {*} c третья сторона
- * @returns 
- */
+ * @param {number} a Первая сторона
+ * @param {number} b Вторая сторона
+ * @param {number} c Третья сторона
+ * @returns Результат проверки на возможность построения треугольника по 3 заданным сторонам
+*/
 
- function isTriangle(a, b, c) {
-}
-
-module.exports.isTriangle = isTriangle;
+function isTriangle(a, b, c) {
+    return (a + b > c && b + c > a && a + c > b);
+ }
+ 
+ module.exports.isTriangle = isTriangle;
