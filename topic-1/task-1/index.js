@@ -11,7 +11,7 @@
  */
  function isTriangle(a, b, c) {
     for (let i of arguments){
-        if (isNaN(i) || i < 0){
+        if (isNaN(i) || i <= 0){
             return `Элемент ${i} не число или меньше 0 `;
         }
     }
