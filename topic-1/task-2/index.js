@@ -13,11 +13,9 @@
  */
  function calculateDoubleArray(array) {
      let doubleArray = [];
+     array = array.filter(elem => elem !== 0);
      for (let element of array) {
-        if (element !== 0) {
-             doubleArray.push(element);
-             doubleArray.push(element);
-       }
+          doubleArray.push(element, element);
      }
      return doubleArray;
 }

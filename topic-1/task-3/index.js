@@ -10,8 +10,8 @@
 */
 
 function factorial(n) {
-    if (n < 0) {
-        throw new Error('less than 0');
+    if (n < 0 || !Number.isInteger(n)) {
+        throw new Error('less than 0 or fraction');
     }
     let factorial = 1;
     for (n; n > 1; n--) {
