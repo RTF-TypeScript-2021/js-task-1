@@ -9,8 +9,12 @@
  * @param {*} c третья сторона
  * @returns 
  */
-
  function isTriangle(a, b, c) {
+    for (let i of arguments){
+        if (isNaN(i)){
+            return `Элемент ${i} не число`;
+        }
+    }
+    return (a + b > c && b + c > a && a + c > b);
 }
-
 module.exports.isTriangle = isTriangle;

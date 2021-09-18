@@ -10,6 +10,35 @@
 */
 
 function factorial(n) {
+    if (isNaN(n)){
+        throw new Error(`${n} is not a number`)
+    }
+    if (n  < 0){
+        throw new Error(`${n} is less than zero`);
+    }
+    switch(n){
+        case 0:
+            return 1;
+        case 1:
+        case 2:
+            return n;
+        default:
+            return GetFactorialTree(2,n);
+    }
+}
+
+function GetFactorialTree(left, right){
+    if (left>right){
+        return 1;
+    }
+    if (left === right){
+        return left;
+    }
+    if (right-left === 1){
+        return left*right;
+    }
+    let tmp = Math.floor((left+right)/2);
+    return GetFactorialTree(left,tmp) + GetFactorialTree(tmp+1,right)
 }
 
 module.exports.factorial = factorial;
