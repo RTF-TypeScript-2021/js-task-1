@@ -11,6 +11,10 @@
  */
 
  function isTriangle(a, b, c) {
+     if (!Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c))
+         throw new Error('There is non-integer number');
+     if (a < 0 || b < 0 || c < 0)
+         throw new Error('There is negative number')
      return a < b + c && b < a + c && c < a + b;
 }
 
