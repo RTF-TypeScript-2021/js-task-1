@@ -11,8 +11,15 @@
  */
 
 function isTriangle(a, b, c) {
-    if (a <= 0 || b <= 0 || c <= 0) return false;
-    return (a + b > c && a + c > b && b + c > a);
+    if (!Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c)){ 
+        throw new Error("expected int")
+    }
+    else if(a <= 0 || b <= 0 || c <= 0) {
+        return false;
+    }
+    else{
+        return (a + b > c && a + c > b && b + c > a);
+    }
 }
 
 module.exports.isTriangle = isTriangle;
