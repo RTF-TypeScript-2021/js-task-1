@@ -5,30 +5,18 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number) {
-    checkInput(number);
+    if(!Number.isInteger(number)) throw new Error(`the input must be Integer, but get ${typeof number}`);
+    else if(number < 1001 || number > 9999) throw new Error("value is not in 999-10000");
+    else if(new Set(number.toString(10).split("")).size === 1){
+        throw new Error("bad number XXXX"); 
+    } 
     for (; ;) {
-        diff = getMaxMin(number) - getMaxMin(number, 'min');
+        max = number.toString().split("").sort((lv, rv) => (rv - lv)); 
+        min =  max.slice(0).reverse();
+        diff = Number(max.join("")) - Number(min.join(""));
         if (diff == number) break;
         number = diff;
     }
     return diff;
 }
-
-function getMaxMin(number, param = "max") {
-    mod = param === "max" ? 1 : -1;
-    return Number(number.toString().split("").sort((lv, rv) => mod * (rv - lv)).join(""))
-}
-
-function checkInput(number) {
-    let numArr = number.toString().split("")
-    if (numArr.length != 4) throw Error(`numbers length must be equal 4, actual length: ${numArr.length}`)
-    let uniqNum = []
-    for (let num of numArr) {
-        if (!uniqNum.includes(num) || num == 0) uniqNum.push(num);
-        else {
-            throw new Error('numbers must be different');
-        }
-    }
-}
-
 module.exports.kaprekarConstant = kaprekarConstant;
