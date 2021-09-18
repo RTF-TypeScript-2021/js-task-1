@@ -10,11 +10,11 @@ function kaprekarConstant(number) {
     }
     while (number !== 6174) {
         let increase = number.toString().split("").sort().join("");
-        let decrease = number.toString().split("").sort().reverse().join("");
-        if (increase === decrease) {
-            throw new Error();
-        }
+        let decrease = number.toString().split("").sort((a,b) => b - a).join("");
         number = decrease - increase;
+        if (number === 0) {
+            throw new Error('should be different values');
+        }
     }
     return number;
 }
