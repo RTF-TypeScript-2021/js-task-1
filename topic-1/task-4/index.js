@@ -8,8 +8,7 @@ const { isFunctionExpression } = require("typescript");
  * @param {string[]} nameArray - массив имён.
  * @return {number} Количество уникальных имён
  * */
-function countUniqueName(nameArray) { //если говнокод, сори писал ночью
-    nameArray.sort();
+function countUniqueName(nameArray) {
     let newArr = [];
     for(let i = 0; i < nameArray.length; i++)
         newArr.push(nameArray[i].toLowerCase());

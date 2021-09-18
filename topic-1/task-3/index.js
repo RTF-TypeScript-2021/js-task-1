@@ -11,9 +11,17 @@
 
 function factorial(n) {
     if (n < 0)
-        return error;
+    {
+        throw Error("The number cannot be negative");
+    }
+    if (n % 1 !== 0)
+    {
+        throw Error("Number-fraction");
+    }
     else if (n == 0 || n == 1)
+    {
         return n = 1;
+    }
     else
     {
         let x;
@@ -22,6 +30,5 @@ function factorial(n) {
     return x;
     }
 }
-//npm test
 
 module.exports.factorial = factorial;

@@ -5,20 +5,19 @@
 // То есть, удвоить количество каждого элемента.
 // Где элемент со значением 0 - свободная ячейка.
 // Для массива, состоящего из нулей(свободных ячеек), верните пустой.
-
 /**
  * 
  * @param {*} array массив
  * @returns удвоенный массив
  */
+
  function calculateDoubleArray(array) {
      let newArr = [];
      for(let i = 0; i < array.length; i++)
      {
-        if(array[i] != 0)
+        if(array[i] !== 0)
         {
-            newArr.push(array[i]);
-            newArr.push(array[i]);
+            newArr.push(array[i], array[i]);
         }
      }
      return newArr;
