@@ -7,7 +7,7 @@
 function kaprekarConstant(number){
 
     let numberString = number.toString();
-    if (numberString.length !==4){
+    if (numberString.length !== 4){
         throw new Error(` Число ${number} не 4-ых значное `)
     }
     if (number === 6174) {

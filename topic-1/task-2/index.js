@@ -13,13 +13,19 @@ function calculateDoubleArray(array) {
     if (array[0] === 0 && array[array.length-1]===0) {
         return [];
     }
-    for (let i = 1; i < array.length; ++i) {
+    for (let i = 1; i < array.length; i+=2) {
         if (isNaN(array[i])){
             return `Элемент ${array[i]} не число`;
         }
-        array[i] = i % 2 === 0
-            ? array[i - 1] + 1
-            : array[i - 1];
+        if (i === 1){
+            array[i] = array[i-1]
+            continue;
+        }
+        array[i-1]  = array[i-2]+1;
+        array[i] = array[i-1];
+        // array[i] = i % 2 === 0
+        //     ? array[i - 1] + 1
+        //     : array[i - 1];
     }
     return array;
 }

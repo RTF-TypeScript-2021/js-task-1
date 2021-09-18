@@ -16,6 +16,9 @@ function factorial(n) {
     if (n  < 0){
         throw new Error(`${n} is less than zero`);
     }
+    if (!Number.isInteger(n)){
+        throw new Error(`${n} is not an integer`)
+    }
     switch(n){
         case 0:
             return 1;
