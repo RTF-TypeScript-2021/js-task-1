@@ -12,6 +12,35 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
-}
+   
+   let newArray = []; // если первый элемент = 0, то дальше можно не идти
+   let countZero = 0; 
+
+    for (let i = 0; i < array.length; i++)
+    {
+      if (array[i] === 0)
+      {
+        countZero += 1;
+      }
+    }
+
+    if (countZero === array.length)
+    {
+      return [];
+    }
+
+    for(let i = 0; i < array.length; i++)
+    {
+      if (array[i] === 0)
+      {
+        continue;
+      }
+
+      newArray.push(array[i]);
+      newArray.push(array[i]);
+    }
+    
+    return newArray;
+  }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;

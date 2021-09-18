@@ -8,8 +8,25 @@
  * Если число меньше 0, генерируйте ошибку.
  * @param n число
 */
-
 function factorial(n) {
+
+  if (n < 0)
+    {
+      throw new console.error();
+    }
+  if (n === 0)
+  {
+    return 1;
+  }
+  
+  let multiply = 1;
+  
+  for(let i = 1; i < n + 1; i++)
+  {
+    multiply *= i;
+  }
+
+  return multiply;
 }
 
 module.exports.factorial = factorial;
