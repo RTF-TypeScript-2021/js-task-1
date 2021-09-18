@@ -17,13 +17,13 @@ function calculateDoubleArray(array) {
         if (isNaN(array[i])){
             return `Элемент ${array[i]} не число`;
         }
-        array[i] = array[i] % 2 === 0
+        array[i] = i % 2 === 0
             ? array[i - 1] + 1
             : array[i - 1];
     }
     return array;
 }
 
-console.log(calculateDoubleArray([1,2,3,4,5,0,0,0,0,0]));
+
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
