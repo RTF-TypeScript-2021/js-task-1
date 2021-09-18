@@ -12,6 +12,18 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
+    if(array.every(e => e == 0))
+        return [];
+        
+    const CopyCount = 2;
+
+    for(let copiedIndex = array.length / 2 - 1; copiedIndex >= 0; copiedIndex--){
+        let insertBeginIndex = copiedIndex * CopyCount;
+        for(let offset = 0; offset < CopyCount; offset++) 
+            array[insertBeginIndex + offset] = array[copiedIndex];
+    }
+
+    return array;
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
