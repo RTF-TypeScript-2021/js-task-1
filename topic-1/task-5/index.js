@@ -4,7 +4,6 @@
  * Предусмотреть крайние случаи, для входных данных и при необходимости
  * выкидывать исключение.
  * */
-console.log(kaprekarConstant(1112));
 function kaprekarConstant(number) 
 {    
     if (number > 9999 || number < 1000) throw new Error("Число не четырёхзначное"); 
