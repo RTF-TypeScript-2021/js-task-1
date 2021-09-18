@@ -8,8 +8,8 @@
  * */
 function countUniqueName(nameArray) {
     let set = new Set();
-    for (let e of nameArray) {
-        set.add(e.toLowerCase());
+    for (let element of nameArray) {
+        set.add(element.toLowerCase());
     }
     return set.size;
 }

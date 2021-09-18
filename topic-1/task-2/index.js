@@ -12,14 +12,14 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
-    let doubleArray = [];
-    for (let e of array) {
-      if (e !== 0) {
-           doubleArray.push(e);
-           doubleArray.push(e);
+     let doubleArray = [];
+     for (let element of array) {
+        if (element !== 0) {
+             doubleArray.push(element);
+             doubleArray.push(element);
+       }
      }
-    }
-    return doubleArray;
+     return doubleArray;
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
