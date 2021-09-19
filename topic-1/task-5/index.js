@@ -5,22 +5,23 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
-// Не сделал
   let exceptionNumbers = [1111, 2222, 3333, 4444, 5555, 6666, 7777, 8888, 9999];
 
   if (number < 1000 || number > 9999 || exceptionNumbers.includes(number))
   {
-    throw new console.error();
+    throw new console.error();// Можно ли убрать эти скобки, если в if или цикле всего одна строчка?
   }
 
   let fNumber = 0;
   let sNumber = 0;
+  let twoNumbers = [];
   let tNumber = number;
 
-  while (tNumber != 6174)
+  while (tNumber !== 6174)
   {
-    fNumber = sorted(tNumber);
-    sNumber = reversed(fNumber);
+    twoNumbers = sorted(tNumber);// Как принять кортеж и обратиться к каждому элементу? 
+    fNumber = twoNumbers[0];
+    sNumber = twoNumbers[1];
     tNumber = fNumber > sNumber ? fNumber - sNumber : sNumber - fNumber;
   }
 
@@ -30,6 +31,7 @@ function kaprekarConstant(number){
 function sorted(number) {
   let sortArray = [];
   let firstNumber = 0;
+  let secondNumber = 0;
 
   for (let i = 1; i < 5; i++)
   {
@@ -41,21 +43,13 @@ function sorted(number) {
   {
     firstNumber = firstNumber * 10 + sortArray[i];
   }
-
-  return firstNumber;
-}
-
-function reversed(number) {
-  let sNumber = 0;
-
-  while(number > 0)
+  sortArray.reverse();
+  for (let i = 0; i < sortArray.length; i++)
   {
-    let digit = number % 10;
-    number = Math.floor(number / 10);
-    sNumber = sNumber * 10 + digit;
+    secondNumber = secondNumber * 10 + sortArray[i];
   }
 
-  return sNumber;
+  return [firstNumber, secondNumber]; //Можно передать кортеж? (firstNumber, secondNumber)
 }
 
 
