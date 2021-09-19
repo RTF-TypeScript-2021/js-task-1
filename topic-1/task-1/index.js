@@ -9,8 +9,14 @@
  * @param {*} c третья сторона
  * @returns 
  */
-
+function isIntegerValue(n){
+    return n > 0 && typeof n === 'number' && n % 1 == 0;
+}
  function isTriangle(a, b, c) {
+     if (isIntegerValue(a) && isIntegerValue(b) && isIntegerValue(c)){
+         return (a + b > c) && (a + c > b) && (b + c > a);
+     }
+     throw new Error();
 }
 
-module.exports.isTriangle = isTriangle;
+module.exports.isTriangle = isTriangle; 

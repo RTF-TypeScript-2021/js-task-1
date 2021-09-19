@@ -10,6 +10,15 @@
 */
 
 function factorial(n) {
+    if (n < 0 || n % 1 != 0){
+        throw new Error();
+    }else{
+        let factorial=1;
+        for (let i = 1; i <= n; i++){
+            factorial *= i;
+        }
+        return factorial
+    }
 }
 
 module.exports.factorial = factorial;
