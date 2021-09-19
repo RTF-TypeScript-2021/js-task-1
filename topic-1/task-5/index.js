@@ -5,16 +5,29 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number) {
-    if(!Number.isInteger(number)) throw new Error(`the input must be Integer, but get ${typeof number}`);
-    else if(number < 1001 || number > 9999) throw new Error("value is not in 999-10000");
-    else if(new Set(number.toString(10).split("")).size === 1){
-        throw new Error("bad number XXXX"); 
-    } 
-    for (; ;) {
+    /*Очень не хотел дублировать код, но единственный простой
+        способ проверить number на числа XXXX или XXYX где Y = X+-1
+        Это найти разность между возможным максимумом и минимумом из этих чисел, 
+        что и является основным действием алгоритма*/ 
+    function getDiff(number){
         max = number.toString().split("").sort((lv, rv) => (rv - lv)); 
         min =  max.slice(0).reverse();
-        diff = Number(max.join("")) - Number(min.join(""));
-        if (diff == number) break;
+        return Number(max.join("")) - Number(min.join(""));
+    }
+    if(!Number.isInteger(number)){
+        throw new Error(`the input must be Integer, but get ${typeof number}`);
+    } 
+    else if(number < 1001 || number > 9999){
+        throw new Error("value is not in 999-10000");
+    }
+    else if(getDiff(number) === 0 || getDiff(number) === 999){
+        throw new Error("bad number XXXX or XYXX where Y= X+-1"); 
+    } 
+    for (; ;) {
+        diff = getDiff(number); 
+        if (diff == number){
+            break;
+        }
         number = diff;
     }
     return diff;
