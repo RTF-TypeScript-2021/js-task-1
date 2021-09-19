@@ -16,12 +16,14 @@ function calculateDoubleArray(array) {
         throw new Error("expected array");
     }
     else{
-        let result = [];
-        for (let el of array){
-            if (el === 0){
+        let freeSpace = array.length;
+        let result = [];    
+        for (let item of array.filter(el => el !==0))
+        {
+            if(result.length+2 > freeSpace){
                 break;
             }
-            result.push(el, el);
+            result.push(item, item);
         }
         return result;
     }
