@@ -10,6 +10,13 @@
 */
 
 function factorial(n) {
+
+    let result = 1
+    if (n < 0)
+    {
+    throw new Error;
+    }
+    return (n != 0) ? n * factorial(n - 1) : 1;
 }
 
 module.exports.factorial = factorial;
