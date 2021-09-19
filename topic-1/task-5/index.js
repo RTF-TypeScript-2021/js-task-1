@@ -4,25 +4,19 @@
  * Предусмотреть крайние случаи, для входных данных и при необходимости
  * выкидывать исключение.
  * */
-let c;
-let m;
 function kaprekarConstant(number){
-    let b = String(number);
-    if ((b.length < 5) && ((b[1] != b[2]) || (b[1] != b[3]) || (b[1] != b[4]))){
-        return math(number);
+    if ((number < 999) || (number > 10000)){
+        throw Error;
     }
-    throw Error;
-}
-
-function math(a){
-    let b = String(a).split('').sort();
-    c = Number(b[3] + b[2] + b[1] + b[0]);
-    m = Number(b[0] + b[1] + b[2] + b[3]);
-    console.log(a);
-    if (c - m == 6174){
-        return 6174;
+    while(number != 6174){
+        if (number.toString().split('').sort().reverse().join('') ==
+        number.toString().split('').sort().join('')){
+            throw Error;
+        }
+        number = number.toString().split('').sort().reverse().join('') - 
+        number.toString().split('').sort().join('');
     }
-    math(c - m);
+    return number;
 }
 
 module.exports.kaprekarConstant = kaprekarConstant;

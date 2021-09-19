@@ -6,25 +6,13 @@
  * @param {string[]} nameArray - массив имён.
  * @return {number} Количество уникальных имён
  * */
+
 function countUniqueName(nameArray) {
-    let b = [nameArray[0]];
-    let c = 0; 
-    for (let i = 1; i < nameArray.length; i++){
-        for(let obj of b)
-        {
-            if(nameArray[i] == obj){
-                break;
-            }
-            if (nameArray[i] != obj){
-                c += 1;
-            }
-            if (c == b.length){
-                b.push(nameArray[i]);
-            }
-        }
-        c = 0;
+    let array = [];
+    for (let i = 0; i < nameArray.length; i++){
+        array.push(nameArray[i].toLowerCase());
     }
-    return b.length;
+    return new Set(array).size;
 }
 
 module.exports.countUniqueName = countUniqueName;
