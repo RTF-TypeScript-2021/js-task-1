@@ -12,9 +12,8 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
-  if (array.every(item => item === 0))
-   return [];
-
+  if (!Array.isArray(array))
+   throw new Error("Argument error. Argument array must be an array.")
   let result = [];
   array.filter(item => item !== 0).forEach(x => result.push(x, x));
   return result;

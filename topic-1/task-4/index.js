@@ -7,6 +7,8 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
+    if (!Array.isArray(nameArray) || nameArray.some(item => typeof item !== "string"))
+        return 0;
     return new Set(nameArray.map(name => name.toLowerCase())).size;
 }
 
