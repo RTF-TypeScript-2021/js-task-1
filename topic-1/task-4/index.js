@@ -7,6 +7,20 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
+  let count = 0;
+
+  for(let i = 0; i < nameArray.length; i++)
+  {
+    if (typeof nameArray[i] === 'string')
+    {
+      count += 1;
+    }
+  }
+  if (count != nameArray.length)
+  {
+    throw new Error();
+  }
+
   let newArray = [];
 
   for(let i = 0; i < nameArray.length; i++)

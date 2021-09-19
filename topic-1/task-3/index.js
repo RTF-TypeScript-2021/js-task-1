@@ -10,9 +10,9 @@
 */
 function factorial(n) {
 
-  if (n < 0)
+  if (n < 0 || !Number.isInteger(n))
     {
-      throw new console.error();
+      throw new Error();
     }
   if (n === 0)
   {

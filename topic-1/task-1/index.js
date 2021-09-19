@@ -11,7 +11,8 @@
  */
 
  function isTriangle(a, b, c) {
-  return !(a + b <= c || a + c <= b || b + c <= a);
+  return (Number.isInteger(a) && Number.isInteger(b) && Number.isInteger(c) 
+  && a > 0 && b > 0 && c > 0 && (a + b) > c && (a + c) > b && (b + c) > a );
 }
 
 module.exports.isTriangle = isTriangle;

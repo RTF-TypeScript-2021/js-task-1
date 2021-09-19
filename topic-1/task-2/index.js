@@ -12,10 +12,14 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
+   if (!Array.isArray(array))
+   {
+     throw new Error("Входной аргумент не является массивом");
+   }
    
-   let newArray = []; // если первый элемент = 0, то дальше можно не идти
+   let newArray = []; 
    let countZero = 0; 
-
+  
     for (let i = 0; i < array.length; i++)
     {
       if (array[i] === 0)
@@ -36,8 +40,7 @@
         continue;
       }
 
-      newArray.push(array[i]);
-      newArray.push(array[i]);
+      newArray.push(array[i], array[i]);
     }
     
     return newArray;
