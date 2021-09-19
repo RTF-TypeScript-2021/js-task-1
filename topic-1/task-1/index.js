@@ -11,13 +11,13 @@
  */
 
 function isTriangle(a, b, c) {
-    if (!Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c)){ 
+    if (!Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c)) { 
         throw new Error("expected int")
     }
-    else if(a <= 0 || b <= 0 || c <= 0) {
+    else if (a <= 0 || b <= 0 || c <= 0) {
         return false;
     }
-    else{
+    else {
         return (a + b > c && a + c > b && b + c > a);
     }
 }

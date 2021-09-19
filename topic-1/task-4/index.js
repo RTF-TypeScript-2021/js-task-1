@@ -9,12 +9,14 @@
 function countUniqueName(nameArray) {
     if (!Array.isArray(nameArray) || 
         nameArray.length === 0 || 
-        nameArray.some((el)=> typeof(el) !== 'string')){
+        nameArray.some((el)=> typeof(el) !== 'string')) {
         throw new Error("expected string Array");
     }
     let uniqueNames = [];
     for (let name of nameArray) {
-        if (!uniqueNames.includes(name.toLowerCase())) uniqueNames.push(name.toLowerCase());
+        if (!uniqueNames.includes(name.toLowerCase())) {
+            uniqueNames.push(name.toLowerCase());
+        }
     }
     return uniqueNames.length;
 }

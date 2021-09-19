@@ -10,7 +10,7 @@
 */
 
 function factorial(n) {
-    if(!Number.isInteger(n) || n<0){
+    if (!Number.isInteger(n) || n<0) {
         throw new Error("expected value must be an integer and be greater than zero")
     }
     else if (n === 0) {

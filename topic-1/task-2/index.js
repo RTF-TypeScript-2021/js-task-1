@@ -12,15 +12,14 @@
  * @returns удвоенный массив
  */
 function calculateDoubleArray(array) {
-    if (!Array.isArray(array)){
+    if (!Array.isArray(array)) {
         throw new Error("expected array");
     }
-    else{
+    else {
         let freeSpace = array.length;
         let result = [];    
-        for (let item of array.filter(el => el !==0))
-        {
-            if(result.length+2 > freeSpace){
+        for (let item of array.filter(el => el !==0)) {
+            if(result.length+2 > freeSpace) {
                 break;
             }
             result.push(item, item);
