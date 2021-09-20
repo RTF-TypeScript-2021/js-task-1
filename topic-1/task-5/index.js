@@ -5,23 +5,27 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
-    /*const kap_count = 6174;
+    const kap_count = 6174;
     let qurrent_n = String(number);
+  
+    if (qurrent_n.length == 4) {
+        while (number !== kap_count ){
 
-    if (qurrent_n.length === 4){
-        
-        while (kap_count !== Number(qurrent_n)){
-
-            let ascending = Number(qurrent_n.split('').sort().join(''));
-            let descending = Number(qurrent_n.split('').sort().reverse().join(''));
+            let ascending = number.toString().split('').sort().join('');
+            let descending = number.toString().split('').sort().reverse().join('');;
             
-            Number(qurrent_n) = descending - ascending;
+            if (descending == ascending) 
+                 throw new UserException('Error');
+
+            number = descending - ascending;
         };
     }
-    else throw new UserException('Durak?');
+    
+    else
+        throw new UserException('Durak?');
 
-    return qurrent_n;
-    */
+    return number;
+    
 }
 
 
