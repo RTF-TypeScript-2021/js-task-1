@@ -15,13 +15,18 @@
  function calculateDoubleArray(array) 
 {
     let doubledArray = [];
-    for (i = 0; i < array.length; i++) 
+    for (let i = 0; i < array.length; i++) 
     {
-        if (array[i] !==0) 
+        if (array[i] === 0) 
+        {
+            doubledArray.splice(i,0);
+        }
+        else 
         {
             doubledArray.push(array[i]);
             doubledArray.push(array[i]);
         }
+
     }
     return doubledArray;
 }

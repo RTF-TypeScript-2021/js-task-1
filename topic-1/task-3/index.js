@@ -17,7 +17,12 @@ function factorial(n) {
         return 1;
     }
     else {
-    return n * factorial(n - 1);
+        let result = n;
+        while (n > 1) {
+            n--;
+            result *= n;
+        }
+    return result;
     }
 }
 module.exports.factorial = factorial;
