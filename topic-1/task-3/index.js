@@ -10,12 +10,10 @@
 */
 
 function factorial(n) {
-    let result ;
     if (n<0 || ! Number . isInteger ( n ))
         throw new Error();
     else if(n==0 || n==1){
-        result =1;
-        return result;
+        return 1;
     }
     else
         return n*factorial(n-1);
