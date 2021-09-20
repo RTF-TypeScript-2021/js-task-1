@@ -24,7 +24,7 @@ function kaprekarConstant(number){
         throw new Error();
     }else{
         number=number.toString();
-        while (newNumber != 6174){
+        while (newNumber !== 6174){
             let n = number.split('').sort(compareNumbers)
             let n1 = makeNumber(n);
             let n2 = makeNumber(n.reverse());
@@ -35,13 +35,12 @@ function kaprekarConstant(number){
                 newNumber = n2 - n1;
                 number = newNumber.toString().padEnd(4,'0');
             }
-            if(newNumber == 0){
+            if(newNumber === 0){
                 throw new Error();
             }
         }
         return newNumber;
     }
-
 }
 
 
