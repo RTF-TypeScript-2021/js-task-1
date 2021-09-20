@@ -7,6 +7,9 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
+    let nameSet = new Set();
+    nameArray.filter(word => typeof(word) === 'string').forEach((word) => nameSet.add(word.toLowerCase()))
+    return nameSet.size;
 }
 
 module.exports.countUniqueName = countUniqueName;
