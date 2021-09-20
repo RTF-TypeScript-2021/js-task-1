@@ -7,7 +7,7 @@
  * @return {number} Количество уникальных имён
  * */
  function countUniqueName(nameArray) {
-    let set = new Set();
+    const set = new Set();
     for (let name of nameArray){
         name = name.toLowerCase();
         set.add(name);
