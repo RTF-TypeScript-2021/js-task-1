@@ -10,7 +10,10 @@
  * @returns 
  */
 
- function isTriangle(a, b, c) {
+function isTriangle(a, b, c) {
+  if (typeof(a) !== 'number' || typeof(b) !== 'number' || typeof(c) !== 'number')
+    throw Error;
+  return a + b > c && b + c > a && a + c > b;
 }
 
 module.exports.isTriangle = isTriangle;
