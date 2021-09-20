@@ -7,8 +7,8 @@
 */
 
 function calculateDoubleArray(array) {
-    let cleanArray = array.filter(num => num != 0);
-    let zeroCount = array.filter(num => num == 0).length;
+    let cleanArray = array.filter(num => num !== 0);
+    let zeroCount = array.filter(num => num === 0).length;
     return cleanArray.flatMap(num => zeroCount-- > 0 ? [num, num] : num);
 }
 
