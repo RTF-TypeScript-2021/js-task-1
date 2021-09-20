@@ -11,6 +11,9 @@
  */
 
  function isTriangle(a, b, c) {
+ if (typeof a === 'number' && typeof b === 'number' && typeof c === 'number') {
+  return a + b > c && a + c > b && b + c > a;
+ }
 }
 
 module.exports.isTriangle = isTriangle;
