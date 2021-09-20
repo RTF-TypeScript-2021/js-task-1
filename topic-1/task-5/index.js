@@ -11,8 +11,8 @@ function kaprekarConstant(number){
     if (qurrent_n.length == 4) {
         while (number !== kap_count ){
 
-            let ascending = number.toString().split('').sort().join('');
-            let descending = number.toString().split('').sort().reverse().join('');;
+            let ascending = String(number).split('').sort().join('');
+            let descending = String(number).split('').sort().reverse().join('');;
             
             if (descending == ascending) 
                  throw new UserException('Error');
@@ -20,7 +20,7 @@ function kaprekarConstant(number){
             number = descending - ascending;
         };
     }
-    
+
     else
         throw new UserException('Durak?');
 
