@@ -7,6 +7,22 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
+    for (let i = 0; i < nameArray.length; i++){
+        nameArray[i] = nameArray[i].toLowerCase();
+
+        for (let j = 0; j < i; j++){
+            if (nameArray[i] == nameArray[j]){
+                delete nameArray[i];
+                break;
+            }
+        }
+    }
+    let countOfNames = 0;
+    for (name in nameArray){
+        if (name != undefined) countOfNames++;
+    }
+    return countOfNames;
+    //return new Set(nameArray.filter(x => x && /^[A-Za-z;.А-Яа-я]*$/.test(x))).size;
 }
 
 module.exports.countUniqueName = countUniqueName;
