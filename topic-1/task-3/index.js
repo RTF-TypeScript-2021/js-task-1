@@ -10,13 +10,12 @@
 */
 
 function factorial(n) {
-
-    
-    if (n < 0)
-    {
+   
+if (n < 0 && isInteger(n))
+{
     throw new Error;
-    }
-    return (n != 0) ? n * factorial(n - 1) : 1;
+}
+return (n !== 0) ? n * factorial(n - 1) : 1;
 }
 
 module.exports.factorial = factorial;

@@ -14,16 +14,16 @@
  function calculateDoubleArray(array) {
 
 let anotherArray = Array();
-
-for (let y = 0; y < array.length; y++)
-{
-if (array[y] != 0)
-{
-anotherArray.push(array[y]);
-anotherArray.push(array[y]);
+if(Array.isArray(array)){
+    for (let y = 0; y < array.length; y++)
+    {
+        if (array[y] !== 0)
+        {
+            anotherArray.push(array[y],array[y]);
+        }
+    }
+    return anotherArray;
 }
-}
-return anotherArray;
 }
 
 
