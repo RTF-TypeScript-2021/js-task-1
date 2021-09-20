@@ -10,7 +10,9 @@
  * @returns 
  */
 
- function isTriangle(a, b, c) {
-}
+ function isTriangle(a, b, c){
+      return (a+b > c) && (c+b > a) && (a+c > b);
+ }
+
 
 module.exports.isTriangle = isTriangle;

@@ -1,5 +1,7 @@
 //Задача 3 - факториал 
 
+const { OperationCanceledException } = require("typescript");
+
 /**
  * В математике факториал неотрицательного целого числа n, обозначаемый n!, 
  * Является произведение всех положительных целых чисел, меньших или равных n. 
@@ -10,6 +12,15 @@
 */
 
 function factorial(n) {
+    let fuck = 1;
+    if (n === 0) return 1;
+    if (!Number.isInteger(n) || (n < 0)) throw new FuckException ('Durak?');
+    if (n > 0){
+        for (let i = n; i > 0; i--)
+            fuck *= i;
+    };
+    return fuck;
+
 }
 
 module.exports.factorial = factorial;
