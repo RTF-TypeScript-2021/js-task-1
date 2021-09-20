@@ -9,7 +9,16 @@
  * @param n число
 */
 
-function factorial(n) {
+function factorial (n) {
+    if (n < 0)
+        throw new Error();
+
+    let result = 1;
+    while (n > 0) {
+        result *= n--;
+    }
+
+    return result;
 }
 
 module.exports.factorial = factorial;

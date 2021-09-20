@@ -6,7 +6,17 @@
  * @param {string[]} nameArray - массив имён.
  * @return {number} Количество уникальных имён
  * */
-function countUniqueName(nameArray) {
+function countUniqueName (nameArray) {
+    let uniqueNames = [];
+
+    for (let name of nameArray) {
+        let newName = name.toLowerCase();
+        if (!uniqueNames.includes(newName)) {
+            uniqueNames.push(newName);
+        }
+    }
+
+    return uniqueNames.length;
 }
 
 module.exports.countUniqueName = countUniqueName;
