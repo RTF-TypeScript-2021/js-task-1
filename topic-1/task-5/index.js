@@ -8,7 +8,7 @@ function kaprekarConstant(number){
     if(number<1000 || number>9999)
         throw new Error();
     const diffDigits = new Set(String(number).split(''));
-    if(diffDigits<2)
+    if(diffDigits.size<2)
         throw new Error();
     let result = number;
     while(result!=6174)
@@ -17,13 +17,9 @@ function kaprekarConstant(number){
     
 }
 function calculateNumber(result){
-    const strArray = result.toString().split('');
-    const arrNumber = new Array(strArray.length);
-    for (let i = 0; i < strArray.length; i++) {
-        arrNumber[i]= parseInt(strArray[i],10);
-    }
-    const bigNumber = parseInt(arrNumber.sort((a,b)=>b-a).join(''),10);
-    const smallNumber = parseInt(arrNumber.sort((a,b)=>a-b).join(''),10);
+    
+    const bigNumber = result.toString().split('').sort().reverse().join('');
+    const smallNumber = result.toString().split('').sort().join('');
     const resultCalculate = bigNumber - smallNumber;
     return resultCalculate;
 }
