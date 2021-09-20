@@ -12,7 +12,7 @@
  * @returns удвоенный массив
  */
 function calculateDoubleArray(array) {
-    if (array.filter(x => typeof(x) !== 'number')) throw Error;
+    if (array.filter(x => typeof(x) !== 'number').length !== 0) throw Error;
     if (!array.find(x => x > 0))
         return [];
     let newArray = [];
