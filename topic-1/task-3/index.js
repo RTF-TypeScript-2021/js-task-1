@@ -13,7 +13,7 @@ function factorial(n) {
     if (n == 0){
         return 1;
     } else if (n < 0){
-        throw error;
+        throw Error("Number can not be negative");
     } else if (n > 0){
         let b = 1;
         while(n != 0){

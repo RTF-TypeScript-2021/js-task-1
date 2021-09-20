@@ -5,7 +5,6 @@
 // То есть, удвоить количество каждого элемента.
 // Где элемент со значением 0 - свободная ячейка.
 // Для массива, состоящего из нулей(свободных ячеек), верните пустой.
-
 /**
  * 
  * @param {*} array массив
@@ -14,12 +13,15 @@
  function calculateDoubleArray(array) {
      let array2 = [];
      for (let obj of array){
-         if (obj != 0){
-             array2.push(obj);
-             array2.push(obj);
+         //Добавил условие на проверку, в конце массива должна быть пустая ячейка - 0.
+         if (array[array.length - 1] != 0){
+             break;
+         }
+         if (obj !== 0){
+             array2.push(obj, obj);
          }
          else {
-             break;
+            break;
          }
      }
      return array2;
