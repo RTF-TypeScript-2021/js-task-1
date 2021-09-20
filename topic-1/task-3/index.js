@@ -10,6 +10,14 @@
 */
 
 function factorial(n) {
+    if (n<0) {
+        throw new Error("Число меньше 0");
+    }
+    let sum=1;
+    for (let i=1; i<=n; i++) {
+        sum=sum*i;
+    }
+    return sum;
 }
 
 module.exports.factorial = factorial;
