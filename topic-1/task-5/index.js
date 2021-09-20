@@ -6,10 +6,10 @@
  * */
 function kaprekarConstant(number){
     if (number<1000 || number>9999) {
-        throw new Error();
+        throw new Error("Число должно быть 4х значным");
     }
     if (new Set(number.toString().split('')).size<2) {
-        throw new Error();
+        throw new Error("Как минимум две цифры в числе должны отличаться");
     }
     while (true) {
         let first = number.toString().split('').sort((a,b)=> b - a).join('');

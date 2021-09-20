@@ -13,6 +13,9 @@ function factorial(n) {
     if (n<0) {
         throw new Error("Число меньше 0");
     }
+    if (!Number.isInteger(n)){
+        throw new Error("Введено не целое число")
+    }
     let sum=1;
     for (let i=1; i<=n; i++) {
         sum=sum*i;
