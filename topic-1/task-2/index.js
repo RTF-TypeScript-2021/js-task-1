@@ -10,26 +10,17 @@
  * @returns удвоенный массив
  */
 function calculateDoubleArray(array) {
-    if (array[0] === 0 && array[array.length-1]===0) {
+    if (array.every(x=>x===0)){
         return [];
     }
-    for (let i = 1; i < array.length; i+=2) {
-        if (isNaN(array[i])){
-            return `Элемент ${array[i]} не число`;
+    let resultArray = [];
+    for(let j = 0; j<array.length/2;j++) {
+        if (isNaN(array[j])){
+            return `Элемент ${array[j]} не число`;
         }
-        if (i === 1){
-            array[i] = array[i-1]
-            continue;
-        }
-        array[i-1]  = array[i-2]+1;
-        array[i] = array[i-1];
-        // array[i] = i % 2 === 0
-        //     ? array[i - 1] + 1
-        //     : array[i - 1];
+        resultArray.push(array[j]);
+        resultArray.push(array[j]);
     }
-    return array;
+    return resultArray;
 }
-
-
-
 module.exports.calculateDoubleArray = calculateDoubleArray;

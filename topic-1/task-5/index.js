@@ -14,8 +14,8 @@ function kaprekarConstant(number){
         return number;
     }
     let splitArrayNumbers = numberString.toString().split("");
-    if (new Set(splitArrayNumbers).size+2 <= splitArrayNumbers.length){
-        throw new Error("Число состоит из 3 или более повторяющихся цифр");
+    if (new Set(splitArrayNumbers).size < 2){
+        throw new Error("Число состоит из 4 повторяющихся цифр");
     }
     let maxValue = getValueFromSet(splitArrayNumbers.sort((a,b)=>b-a));
     let minValue = getValueFromSet(splitArrayNumbers.sort());
@@ -33,5 +33,4 @@ function getValueFromSet(set){
     }
     return Number.parseInt(MaxNumber);
 }
-
 module.exports.kaprekarConstant = kaprekarConstant;

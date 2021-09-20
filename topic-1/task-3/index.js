@@ -37,11 +37,11 @@ function GetFactorialTree(left, right){
     if (left === right){
         return left;
     }
-    if (right-left === 1){
+    if (right-left == 1){
         return left*right;
     }
     let tmp = Math.floor((left+right)/2);
-    return GetFactorialTree(left,tmp) + GetFactorialTree(tmp+1,right)
+    return GetFactorialTree(left,tmp) * GetFactorialTree(tmp+1,right)
 }
-
+console.log(factorial(5));
 module.exports.factorial = factorial;
