@@ -10,6 +10,19 @@
 */
 
 function factorial(n) {
+    if (n < 0){
+        throw new Error("Value must be more than zero"); 
+    }
+    else if (n === 0) {
+        return 1;
+    }
+    else {
+        let result = n;
+        while (n > 1) {
+            n--;
+            result *= n;
+        }
+    return result;
+    }
 }
-
 module.exports.factorial = factorial;
