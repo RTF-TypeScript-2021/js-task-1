@@ -10,7 +10,7 @@ function countUniqueName(nameArray) {
     if (!Array.isArray(nameArray))
         throw new Error('Incorrect argument');
     nameArray.forEach(name => {
-        if (Object.prototype.toString.call(name) !== '[object String]')
+        if (typeof name !== 'string')
             throw new Error('Array has element with incorrect type');
     });
     const lowerNames = nameArray.map(x => x.toLowerCase());

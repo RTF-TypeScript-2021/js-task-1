@@ -7,10 +7,8 @@
 function kaprekarConstant(number){
     if (number > 9999 || number < 1000)
         throw new Error('Number has more or less than 4 digits');
-    let stringNumber = String(number);
-    if (stringNumber[0] === stringNumber[1]
-        && stringNumber[1] === stringNumber[2]
-        && stringNumber[2] == stringNumber[3])
+    let arrayNumber = String(number).split('');
+    if (arrayNumber.every(x => x === arrayNumber[0]))
         throw new Error('All numbers are the same');
     for (let i = 0; i < 7; i++) {
         number = getSortedDigits(number) - getSortedDigits(number, 'descending');
@@ -20,7 +18,12 @@ function kaprekarConstant(number){
 }
 
 function getSortedDigits(number, sortType = 'ascending') {
-    let result =  String(number)
+    let stringNumber;
+    if (number < 1000)
+        stringNumber = '0' + String(number);
+    else
+        stringNumber = String(number);
+    let result =  stringNumber
         .split('')
         .sort();
     if (sortType == 'descending')
