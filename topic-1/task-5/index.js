@@ -21,3 +21,5 @@
     }
     else throw new Error();
 }
+
+module.exports.kaprekarConstant = kaprekarConstant;
