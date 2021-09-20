@@ -3,7 +3,7 @@
 /**
  * @param {Number} n число
  * @returns {Number} Факториал исходного числа
-*/
+ */
 
 function factorial(n){
     if (n >= 0)
