@@ -11,7 +11,7 @@
 
 function factorial(n) {
 
-    let result = 1
+    
     if (n < 0)
     {
     throw new Error;

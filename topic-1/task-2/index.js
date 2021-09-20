@@ -19,12 +19,12 @@ for (let y = 0; y < array.length; y++)
 {
 if (array[y] != 0)
 {
-anotherArray.push(array[y])
-anotherArray.push(array[y])
+anotherArray.push(array[y]);
+anotherArray.push(array[y]);
 }
 }
-return anotherArray
- }
+return anotherArray;
+}
 
 
 module.exports.calculateDoubleArray = calculateDoubleArray;

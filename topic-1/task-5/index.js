@@ -1,3 +1,5 @@
+const { OperationCanceledException } = require("typescript");
+
 /**
  * Задача 5 - реализовать функцию вычисляющую постоянную Капрекара
  * https://en.wikipedia.org/wiki/6174_(number)
@@ -5,18 +7,20 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
-    while( number != 6174)
-    let reversNumber = 0
-    while( number ){ 
-       reversNumber = (reversNumber * 10) + number % 10   
-       number = number/10|0 }
-       number = Math.abs(number - reversNumber)
-    if (number = 0 ){
-    throw new Error
+    if( number.toString().length != 4){
+        throw new Error("Введено не четырехзначное число");
     }
-    if (number!= 6174){
-        kaprekarConstant(number)
-    }
+    let firstNum =  number;
+     while(firstNum != 6174)
+     {
+         let sortNumber = firstNum.toString().split('').sort().join('');
+         let reversSortNum = sortNumber.split('').reverse().join('');
+         firstNum = reversSortNum - sortNumber;
+         if(firstNum == 0 ){
+             throw new Error("Из данного числа нельзя получить постоянную Капрекара")
+     }
+  }
+  return firstNum;
 }
 
 module.exports.kaprekarConstant = kaprekarConstant;
