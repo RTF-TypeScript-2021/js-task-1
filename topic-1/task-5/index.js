@@ -7,7 +7,7 @@
 function kaprekarConstant(number){
     if (!Number.isInteger(number) || number < 1000 || number > 9999)
         throw new Error("Argument error. Argument number must be a positive number greater than 999 and less than 10000.");
-    if (new Set(number.toString()).size < 2)
+    if (new Set(number.toString()).size === 1)
         throw new Error("Argument error. Argument number must have at least two different digits.");
 
     const maxIterationCount = 7;
@@ -16,6 +16,9 @@ function kaprekarConstant(number){
 
     for (let i = 0; i < maxIterationCount; i++){
         let digits = splitNumber(number);
+        while (digits.length !== 4){
+            digits.push(0);
+        }
         digits.sort();
         let minNumber = createNumber(digits);
         digits.reverse();
