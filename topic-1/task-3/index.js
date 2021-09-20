@@ -10,6 +10,21 @@
 */
 
 function factorial(n) {
+    if (n < 0) {
+        throw new Error ("Число меньше 0")
+    }
+    
+    else if (n === 0) {
+        return 1;
+    }
+
+    else {
+        let res = 1;
+        for (let i = n; i > 0; i--) {
+            res *= i;
+        }
+        return res;
+    }
 }
 
 module.exports.factorial = factorial;
