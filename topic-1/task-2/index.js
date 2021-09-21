@@ -12,16 +12,16 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
-    if (!(array.every(item => item == 0)))
-    {
-        if ()
-        for (let i = array.length-1; i >= array.length/2; i--)
-        {
-            array[i] = array[i-array.length/2];
+    if (!Array.isArray(array))
+        throw new Error('Incorrect argument');
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] !== 0) {
+            result.push(array[i]);
+            result.push(array[i]);
         }
-        return array.sort();
     }
-    else return([]);
+    return result;
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
