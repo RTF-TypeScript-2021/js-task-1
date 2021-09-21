@@ -9,9 +9,9 @@
 function countUniqueName(nameArray) {
     let lowerCaseArray = nameArray.map(name => name.toLowerCase());
 
-    let uniqueArray = [...new Set(lowerCaseArray)];
+    let uniqueArray = new Set(lowerCaseArray);
     
-    return uniqueArray.length;
+    return uniqueArray.size;
 }
 
 module.exports.countUniqueName = countUniqueName;

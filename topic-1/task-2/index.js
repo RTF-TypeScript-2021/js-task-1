@@ -19,9 +19,12 @@
           return [];
       }
 
-      array
-          .filter(item => item > 0)
-          .map(item => newArray.push(item, item));
+      for (let i = 0; i < array.length; i++) {
+          if (array[i] === 0) {
+              continue;
+          }
+          newArray.push(array[i], array[i])
+      }
 
       return newArray;
 
