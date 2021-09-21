@@ -14,6 +14,7 @@
  function calculateDoubleArray(array) {
     if (!(array.every(item => item == 0)))
     {
+        if ()
         for (let i = array.length-1; i >= array.length/2; i--)
         {
             array[i] = array[i-array.length/2];
