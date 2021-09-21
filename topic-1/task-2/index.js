@@ -16,18 +16,19 @@ function calculateDoubleArray(array) {
     if (array.length % 2 == 1) {
         return [];
     }
-
+    
+    let array1 = [];
     for (i = array.length / 2 - 1; i >= 0; i--) {
-       if (array[i] != 0) isVoid = false;
-       array[i * 2] = array[i];
-       array[i * 2 + 1] = array[i];
+       if (array[i] != 0) {
+           isVoid = false;
+       }
+       array1.push(array[i]);
+       array1.push(array[i]);
     }
     
     if (isVoid) {
         return [];
-    }
-    
-    else {
+    } else {
         return array;
     }
 }
