@@ -5,6 +5,18 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
+    while (number !== 6174) {
+        let ascendingNumber = number.toString().split("").sort().join('');
+        let descendingNumber = number.toString().split("").sort().reverse().join('');
+
+        number = descendingNumber - ascendingNumber;
+
+        if (number < 1000 || number === 0 || number > 10000) {
+            throw new Error('Соблюдены не все условия');
+        }
+    }
+
+    return number;
 }
 
 module.exports.kaprekarConstant = kaprekarConstant;
