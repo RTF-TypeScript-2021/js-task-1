@@ -7,10 +7,12 @@
  * @return {number} Количество уникальных имён
  * */
 function countUniqueName(nameArray) {
-    if (nameArray.filter(i => typeof i === 'string')) {
-        var newArray = nameArray.map((n) => n.toLowerCase());
-        var uniqueItems = new Set(newArray);
-        return uniqueItems.size;
+    if (Array.isArray(nameArray)) {
+        if (nameArray.filter(i => typeof i === 'string')) {
+            var newArray = nameArray.map((n) => n.toLowerCase());
+            var uniqueItems = new Set(newArray);
+            return uniqueItems.size;
+        }
     }
 }
 
