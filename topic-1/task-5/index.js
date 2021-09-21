@@ -5,9 +5,7 @@
  * выкидывать исключение.
  * */
  function kaprekarConstant(number) {
-    if (number < 1000 && number > 9999) 
-        throw new Error('Число должно быть четырехзначым');
-    else {
+    if (number >= 1000 && number <= 9999) {
         while (number !== 6174) {
             let smallNumber = number.toString().split('').sort().join('');
             let bigNumber = number.toString().split('').sort().reverse().join('');
@@ -16,6 +14,7 @@
             number = bigNumber - smallNumber;
         }
     }
+    else throw new Error();
     return number;
 }
 
