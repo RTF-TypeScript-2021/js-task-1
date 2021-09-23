@@ -11,7 +11,7 @@
 
 function factorial(n) {
    
-if (n < 0 && isInteger(n))
+if (n < 0 && Number.isInteger(n))
 {
     throw new Error;
 }

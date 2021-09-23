@@ -7,7 +7,7 @@ const { OperationCanceledException } = require("typescript");
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
-    if( number.toString().length !== 4 && !isInteger(number)){
+    if( number.toString().length !== 4 || !Number.isInteger(number)){
         throw new Error("Введено не целое четырехзначное число");
     }
     let firstNum =  number;
