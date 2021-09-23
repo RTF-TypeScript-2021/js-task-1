@@ -13,14 +13,12 @@
  */
  function calculateDoubleArray(array) {
     let resultArray = [];
-    if (Array.isArray(array)) {
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] !== 0) {
-                resultArray.push(array[i]);
-                resultArray.push(array[i]);
-            }
+    array.forEach((i, index) => {
+        if (array[array.length - index - 1] === 0 && i !== 0){
+         resultArray.push(i);
+         resultArray.push(i);
         }
-    }
+    });
     return resultArray;
 }
 
