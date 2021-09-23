@@ -5,16 +5,22 @@
  * выкидывать исключение.
  * */
  function kaprekarConstant(number) {
-    if (number >= 1000 && number <= 9999) {
-        while (number !== 6174) {
-            let smallNumber = number.toString().split('').sort().join('');
-            let bigNumber = number.toString().split('').sort().reverse().join('');
-            if (bigNumber == smallNumber)
-                    throw new Error();
-            number = bigNumber - smallNumber;
-        }
-    }
-    else throw new Error();
+    if(number < 1000 || number > 9999) {
+        throw new Error('The number is not a four-digit number');
+    };
+    let digits = String(number).split('');
+    if (digits.every(a => a === digits[0])) {
+        throw new Error('All numbers are the same');
+    };
+    while (number !== 6174) {
+        if (number < 1000) {
+            number = parseInt(number.toString() + '0');
+        };
+        let smallNumber = number.toString().split('').sort((a, b) => a - b).join('');
+        let bigNumber = number.toString().split('').sort((a, b) => b - a).join('');
+        number = bigNumber - smallNumber;
+    };
+    
     return number;
 }
 
