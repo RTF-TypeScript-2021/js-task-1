@@ -12,17 +12,22 @@
  * @returns удвоенный массив
  */
  function calculateDoubleArray(array) {
-   let isVoid = true;
-   if (array.length % 2 == 1) return [];
+   if (array.length % 2 === 1) {
+       return [];
+   }
 
-   for (i = array.length / 2 - 1; i >= 0; i--){
-      if (array[i] != 0) isVoid = false;
-      array[i * 2] = array[i];
-      array[i * 2 + 1] = array[i];
+   let newArr = [];
+   for (let i = 0; i < array.length / 2; i++){
+      newArr.push(array[i]);
+      newArr.push(array[i]);
    }
    
-   if (isVoid) return [];
-   else return array;
+   if (!array.find(item => item !== 0)) {
+       return [];
+   }
+   else {
+       return newArr;
+   }
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
