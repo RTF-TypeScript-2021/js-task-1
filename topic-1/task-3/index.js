@@ -12,15 +12,19 @@ const { OperationCanceledException } = require("typescript");
 */
 
 function factorial(n) {
-    let fuck = 1;
-    if (n === 0) return 1;
-    if (!Number.isInteger(n) || (n < 0)) throw new FuckException ('Durak?');
+    let point = 1;
+    if (n === 0){
+        return 1;
+    }
+    if (!Number.isInteger(n) || (n < 0)){
+        throw new UserException ('Invalid number');
+    }
     if (n > 0){
-        for (let i = n; i > 0; i--)
-            fuck *= i;
+        for (let i = n; i > 0; i--){
+        point *= i;
+        }
     };
-    return fuck;
-
+    return point;
 }
 
 module.exports.factorial = factorial;
