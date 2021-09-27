@@ -6,24 +6,19 @@
  * */
 function kaprekarConstant(number){
     const kap_count = 6174;
-    let qurrent_n = String(number);
-  
-    if (qurrent_n.length == 4) {
+    let qurrent_n = String(number);  
+    if (qurrent_n.length === 4) {
         while (number !== kap_count ){
-
             let ascending = String(number).split('').sort().join('');
-            let descending = String(number).split('').sort().reverse().join('');;
-            
-            if (descending == ascending) 
+            let descending = String(number).split('').sort().reverse().join('');
+            if (descending === ascending){
                  throw new UserException('Error');
-
+            }
             number = descending - ascending;
         };
-    }
-
-    else
+    } else {
         throw new UserException('Durak?');
-
+    }
     return number;
     
 }
