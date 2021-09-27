@@ -11,13 +11,14 @@
  * @param {*} array массив
  * @returns удвоенный массив
  */
+
 function calculateDoubleArray(array) {
     let isVoid = true;
     if (array.length % 2 == 1) {
         return [];
     }
-    
-    let array1 = [];
+    let array1 = []
+
     for (i = array.length / 2 - 1; i >= 0; i--) {
        if (array[i] != 0) {
            isVoid = false;
@@ -29,7 +30,7 @@ function calculateDoubleArray(array) {
     if (isVoid) {
         return [];
     } else {
-        return array;
+        return array1.reverse();
     }
 }
 
