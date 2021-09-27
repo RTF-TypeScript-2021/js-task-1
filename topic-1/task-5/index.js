@@ -4,20 +4,27 @@
  * Предусмотреть крайние случаи, для входных данных и при необходимости
  * выкидывать исключение.
  * */
+
 function kaprekarConstant(number){
     let splSrtNumber = number.toString().split("").sort();
     let isCorrect = false;
 
-    for (let i = 1; i < splSrtNumber.length; i++){
-        if(splSrtNumber[i] != splSrtNumber[i - 1]) isCorrect = true;
+    for (let i = 1; i < splSrtNumber.length; i++) {
+        if(splSrtNumber[i] != splSrtNumber[i - 1]) {
+            isCorrect = true;
+        }
     }
 
-    if (!isCorrect || splSrtNumber.length != 4) throw err;
+    if (!isCorrect || splSrtNumber.length != 4) {
+        throw new Error('');
+    }
 
-    while (true){
+    while (true) {
         let descendingNumber = getDescendingNumber(splSrtNumber);
         let increasingNumber = getIncreasingNumber(splSrtNumber);
-        if (descendingNumber - increasingNumber == number) return number;
+        if (descendingNumber - increasingNumber == number) {
+            return number;
+        }
         number = descendingNumber - increasingNumber;
         splSrtNumber = number.toString().split("").sort();
     }
@@ -25,15 +32,15 @@ function kaprekarConstant(number){
 
 function getDescendingNumber(number){
     let newNumber = 0;
-    for (let i = number.length - 1; i >= 0; i--){
+    for (let i = number.length - 1; i >= 0; i--) {
         newNumber += number[i];
     }
     return Number(newNumber);
 }
 
-function getIncreasingNumber(number){
+function getIncreasingNumber(number) {
     let newNumber = 0;
-    for (let i = 0; i < number.length; i++){
+    for (let i = 0; i < number.length; i++) {
         newNumber += number[i];
     }
     return Number(newNumber);
