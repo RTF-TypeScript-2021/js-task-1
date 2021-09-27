@@ -5,28 +5,29 @@
  * выкидывать исключение.
  * */
 function kaprekarConstant(number){
-    let numArray1 = [], numArray2 = [];
+    const numArray = [];
+
     while(number > 0)
         {
             let remaind = number % 10;
-            numArray1.push(remaind);
+            numArray.push(remaind);
             number = (number - remaind) / 10;
         }
 
-        if (new Set(numArray1).size < 2 || numArray1.length != 4)
-            throw new Error(`${numArray1} incorrect`);
+        if (new Set(numArray).size < 2 || numArray.length != 4)
+            throw new Error(`${numArray} incorrect`);
             
-        while (!isKaprekarNumber(numArray1)){
-            numArray1.sort()
-            numArray2 = numArray1.slice();
-            numArray1.reverse();
-            arraySubtraction(numArray1, numArray2, 3);
+        while (!isKaprekarNumber(numArray)){
+            numArray.sort()
+            const numArrayTemp = numArray.slice();
+            numArray.reverse();
+            arraySubtraction(numArray, numArrayTemp, 3);
         }
 
         let pow = 1;
         let kaprekarNumber = 0;
         for (let i = 3; i >= 0; i--){
-            kaprekarNumber += pow * numArray1[i];
+            kaprekarNumber += pow * numArray[i];
             pow *= 10;
         }
         

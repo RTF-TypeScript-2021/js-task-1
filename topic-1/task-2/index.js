@@ -15,11 +15,11 @@
     if(array.every(e => e == 0))
         return [];
         
-    const CopyCount = 2;
+    const copyCount = 2;
 
     for(let copiedIndex = array.length / 2 - 1; copiedIndex >= 0; copiedIndex--){
-        let insertBeginIndex = copiedIndex * CopyCount;
-        for(let offset = 0; offset < CopyCount; offset++) 
+        let insertBeginIndex = copiedIndex * copyCount;
+        for(let offset = 0; offset < copyCount; offset++) 
             array[insertBeginIndex + offset] = array[copiedIndex];
     }
 
