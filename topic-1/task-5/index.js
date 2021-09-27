@@ -22,15 +22,16 @@ function kaprekarConstant(number){
     while (true) {
         let descendingNumber = getDescendingNumber(splSrtNumber);
         let increasingNumber = getIncreasingNumber(splSrtNumber);
-        if (descendingNumber - increasingNumber == number) {
+        let descendMinusIncreasing = descendingNumber - increasingNumber
+        if (descendMinusIncreasing == number) {
             return number;
         }
-        number = descendingNumber - increasingNumber;
+        number = descendMinusIncreasing;
         splSrtNumber = number.toString().split("").sort();
     }
 }
 
-function getDescendingNumber(number){
+function getDescendingNumber(number) {
     let newNumber = 0;
     for (let i = number.length - 1; i >= 0; i--) {
         newNumber += number[i];
