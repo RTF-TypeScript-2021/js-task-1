@@ -8,23 +8,16 @@
  * Если число меньше 0, генерируйте ошибку.
  * @param n число
 */
-function isInteger(num) {
-    return (num ^ 0) === num;
-}
 
 function factorial(n) {
-    if (n < 0) {
-        throw new Error ("Число меньше 0")
-    } else if (n === 0) {
-        return 1;
-    } else if (isInteger(n)) {
+    if (Number.isInteger(n) && n >= 0) {
         let res = 1;
         for (let i = n; i > 0; i--) {
             res *= i;
         }
         return res;
     } else {
-        throw new Error ("Число дробное")
+        throw new Error ("Неверный ввод. Необходимо ввести целое натуральное число или 0.");
     }
 }
 
