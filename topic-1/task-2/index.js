@@ -13,25 +13,37 @@
  */
 
 function calculateDoubleArray(array) {
-    let isVoid = true;
-    if (array.length % 2 == 1) {
+
+    let counter = 0;
+    let array1 = [];
+    
+    for (i = 0; i < array.length; i++) {
+        if (array[i] == 0) {
+            counter += 1;
+
+        } else {
+            array1.push(array[i], array[i]);
+        }
+    }
+
+    if (counter == array.length) {
         return [];
     }
-    let array1 = []
 
-    for (i = array.length / 2 - 1; i >= 0; i--) {
-       if (array[i] != 0) {
-           isVoid = false;
-       }
-       array1.push(array[i]);
-       array1.push(array[i]);
+    if (array.length < array1.length) {
+        while (array.length != array1.length) {
+            array1 = array1.slice(0, array1.length - 1);
+        }
     }
     
-    if (isVoid) {
-        return [];
-    } else {
-        return array1.reverse();
+    if (array.length > array1.length) {
+        while (array.length != array1.length) {
+            array1.push(0);
+        }
     }
+
+    return array1;
+    
 }
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
