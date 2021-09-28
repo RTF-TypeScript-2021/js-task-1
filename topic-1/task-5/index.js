@@ -5,18 +5,20 @@
  * выкидывать исключение.
  * */
 
-function kaprekarConstant(number){
+function kaprekarConstant(number) {
+    if (!Number.isInteger(number)) {
+        throw new Error('Неверный тип введомых данных.');
+    }
+    
     let splSrtNumber = number.toString().split("").sort();
-    let isCorrect = false;
+
+    if (splSrtNumber.length != 4) {
+        throw new Error("Неверный ввод. Число должно быть от 1000 до 9999.");
+    }
 
     for (let i = 1; i < splSrtNumber.length; i++) {
         if(splSrtNumber[i] != splSrtNumber[i - 1]) {
-            isCorrect = true;
         }
-    }
-
-    if (!isCorrect || splSrtNumber.length != 4) {
-        throw new Error('');
     }
 
     while (true) {
