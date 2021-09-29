@@ -20,7 +20,6 @@ function calculateDoubleArray(array) {
     for (i = 0; i < array.length; i++) {
         if (array[i] == 0) {
             counter += 1;
-
         } else {
             array1.push(array[i], array[i]);
         }
