@@ -13,6 +13,7 @@
  */
  function calculateDoubleArray(array) {
   let newArray = [];
+  let freeSlotsCount = 0;
 
   if (array.every(item => typeof item === 'number')) {
       if (array.every(item => item === 0)) {
@@ -21,13 +22,24 @@
 
       for (let i = 0; i < array.length; i++) {
           if (array[i] === 0) {
+              freeSlotsCount++;
+          }
+      }
+
+      for (let i = 0; i < array.length; i++) {
+          if (array[i] === 0) {
               continue;
           }
-          newArray.push(array[i], array[i])
+
+          if (freeSlotsCount > 0) {
+              newArray.push(array[i], array[i]);
+              freeSlotsCount--;
+          } else {
+              newArray.push(array[i]);
+          }
       }
 
       return newArray;
-
   }
 }
 
