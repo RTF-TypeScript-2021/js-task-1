@@ -9,8 +9,7 @@ function kaprekarConstant(number) {
     if (Number.isInteger(number) === true && numLength === 4) {
         i = number
         while (i != 6174) {
-            let numStr = i.toString()
-            let arr = numStr.split('')
+            let arr = i.toString().split('')
             count = new Set(arr)
             if (count.size >= 2) {
                 let min = Number((arr.sort((a, b) => a - b)).join(''))
