@@ -10,6 +10,18 @@
 */
 
 function factorial(n) {
+    if (n > 0) {
+        let sum = 1
+        for (i = 2; i <= n; i++) {
+            sum = sum * i
+        }
+        return sum
+    }
+    else if (n===0){
+        return 1
+    }
+    else {
+        throw new Error
+    }
 }
-
 module.exports.factorial = factorial;

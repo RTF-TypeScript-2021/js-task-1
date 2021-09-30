@@ -11,7 +11,14 @@
  * @param {*} array массив
  * @returns удвоенный массив
  */
- function calculateDoubleArray(array) {
+function calculateDoubleArray(array) {
+    let arr = []
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+            arr.push(array[i])
+            arr.push(array[i])
+        }
+    }
+    return arr
 }
-
 module.exports.calculateDoubleArray = calculateDoubleArray;

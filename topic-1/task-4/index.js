@@ -6,7 +6,8 @@
  * @param {string[]} nameArray - массив имён.
  * @return {number} Количество уникальных имён
  * */
-function countUniqueName(nameArray) {
+ function countUniqueName(nameArray) {
+    count = new Set(nameArray)
+    return count.size
 }
-
 module.exports.countUniqueName = countUniqueName;
