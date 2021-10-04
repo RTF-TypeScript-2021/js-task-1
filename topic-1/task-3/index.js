@@ -10,18 +10,20 @@
 */
 
 function factorial(n) {
-    if (n > 0) {
-        let sum = 1
-        for (i = 2; i <= n; i++) {
-            sum = sum * i
+    if (Number.isInteger(n) === true) {
+        if (n > 0) {
+            let sum = 1
+            for (i = 2; i <= n; i++) {
+                sum = sum * i
+            }
+            return sum
         }
-        return sum
-    }
-    else if (n===0){
-        return 1
+        else if (n === 0) {
+            return 1
+        }
     }
     else {
-        throw new Error
+        throw new Error('Ожидалось, что n - целосчисленное число')
     }
 }
 module.exports.factorial = factorial;

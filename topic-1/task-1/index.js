@@ -11,11 +11,14 @@
  */
 
 function isTriangle(a, b, c) {
-    if (a + b > c && a + c > b && b + c > a) {
-        return true
-    }
-    else {
-        return false
+    if (Number.isInteger(a,b,c) === true && arguments.length===3) {
+        if (a + b > c && a + c > b && b + c > a) {
+            return true
+        } else {
+            return false
+        }
+    } else {
+        throw new Error('Ожидалось три целосчисленных значения')
     }
 }
 module.exports.isTriangle = isTriangle;

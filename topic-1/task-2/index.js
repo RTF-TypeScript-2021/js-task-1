@@ -12,10 +12,22 @@
  * @returns удвоенный массив
  */
 function calculateDoubleArray(array) {
+    if (Array.isArray(array) === false) {
+        throw new Error('Ожидался массив цифр')
+    }
     let arr = []
+    let zeroLength = 0
     for (i = 0; i < array.length; i++) {
-        if (array[i] > 0) {
-            arr.push(array[i])
+        if (array[i] === 0) {
+            zeroLength++
+        }
+    }
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > 0 && zeroLength > 0) {
+            arr.push(array[i], array[i])
+            zeroLength = zeroLength - 1
+        }
+        else if (array[i] > 0) {
             arr.push(array[i])
         }
     }
