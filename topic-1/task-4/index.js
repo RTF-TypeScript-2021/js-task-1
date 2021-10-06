@@ -10,11 +10,9 @@
 function countUniqueName(nameArray) {
 
     var lowerArray = [];
-    for (i = 0; i < nameArray.length - 1; i++) {
-        let name = nameArray[i].toString().toLowerCase().replace(/[; .,!?:–]/, "")
-        if (nameArray[i] != "") {
-            lowerArray.push(name)
-        }
+    for (i = 0; i < nameArray.length; i++) {
+        let name = nameArray[i].toString().toLowerCase()
+        lowerArray.push(name)
     }
 
     const unique = new Set(lowerArray);
