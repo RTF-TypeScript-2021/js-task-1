@@ -32,7 +32,4 @@ function kaprekarConstant(number) {
     }
 }
 
-//для отладки
-kaprekarConstant(1234)
-
 module.exports.kaprekarConstant = kaprekarConstant;

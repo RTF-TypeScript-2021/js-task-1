@@ -22,6 +22,4 @@ function countUniqueName(nameArray) {
     return unique.size
 }
 
-countUniqueName(arrayOfName)
-
 module.exports.countUniqueName = countUniqueName;
