@@ -7,11 +7,22 @@
 // Для массива, состоящего из нулей(свободных ячеек), верните пустой.
 
 /**
- * 
+ *
  * @param {*} array массив
  * @returns удвоенный массив
  */
- function calculateDoubleArray(array) {
+function calculateDoubleArray(array) {
+    const resArray = [];
+    for(let i = 0; i < array.length; i++){
+        if (array[i] === 0) {
+            break;
+        }
+        resArray.push(array[i]);
+        resArray.push(array[i]);
+    }
+
+    return resArray;
 }
+
 
 module.exports.calculateDoubleArray = calculateDoubleArray;
